@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Our Memories 📸</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            text-align: center;
+            color: white;
+            padding: 40px;
+        }
+
+        h1 {
+            margin-bottom: 30px;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 20px;
+            transition: 0.3s;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Overlay */
+        .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+        }
+
+        .overlay img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 20px;
+        }
+
+        .image-container.active .overlay {
+            opacity: 1;
+        }
+
+        @keyframes pop {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
+        }
+
+        button {
+            margin-top: 40px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            background-color: white;
+            color: #ff6b81;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<h1>My Beautiful Wife💖</h1>
+
+<div class="gallery">
+
+    <div class="image-container" onclick="toggleOverlay(this)">
+        <img src="photo1.jpg" alt="">
+        <div class="overlay">
+            <img src="Cat Kitty GIF.gif" alt="">
+        </div>
+    </div>
+
+    <div class="image-container" onclick="toggleOverlay(this)">
+        <img src="photo2.jpg" alt="">
+        <div class="overlay">
+            <img src="In Love Cat GIF.gif" alt="">
+        </div>
+    </div>
+
+    <div class="image-container" onclick="toggleOverlay(this)">
+        <img src="photo3.jpg" alt="">
+        <div class="overlay">
+            <img src="love.gif" alt="">
+        </div>
+    </div>
+
+    <div class="image-container" onclick="toggleOverlay(this)">
+        <img src="photo4.jpg" alt="">
+        <div class="overlay">
+            <img src="Lose For You GIF.gif" alt="">
+        </div>
+    </div>
+
+</div>
+
+<button onclick="goBack()">Back to Counter 💕</button>
+
+<script>
+    function toggleOverlay(element) {
+        element.classList.toggle("active");
+    }
+
+    function goBack() {
+        window.location.href = "index.html";
+    }
+</script>
+
+</body>
+</html>
